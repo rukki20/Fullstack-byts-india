@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stop Timer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: antiquewhite;
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 0 15px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #timer {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 120px 0 20px 0;
+            padding: 20px 40px;
+            background: #222;
+            color: rgb(225, 255, 0);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgb(0, 200, 255);
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        li:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="./main.html">HOME</a></li>
+            <li><a href="./addition.html">Add Numbers</a></li>
+             <li><a href="./convert_f_to_c.html">Convert F to C</a></li> 
+             <li><a href="#">stopWatch</a></li> 
+             <li><a href="file:///C:/Users/Rukkiya%20Zainab/OneDrive/Desktop/html/calc.html">calculator</a></li> 
+            </ul>
+            </header>
+
+    <div id="timer">0</div>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+        let count = 0;
+        let timer = null;
+
+        function startTimer() {
+            if (!timer) {
+                timer = setInterval(() => {
+                    count++;
+                    document.getElementById('timer').innerText = count;
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function resetTimer() {
+            stopTimer();
+            count = 0;
+            document.getElementById('timer').innerText = count;
+        }
+    </script>
+
+</body>
+</html>

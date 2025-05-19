@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Numbers</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7500/7500065.png" type="image/x-icon">
+   <style>
+      body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background-color: rgb(198, 157, 236);
+        }
+    footer{
+         text-align: center;
+            color: black;
+            font-size: xx-large;
+            font-family: monospace;
+    }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 0;
+        }
+        li:hover{
+            background-color: aqua;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img
+            src="https://cdn-icons-png.flaticon.com/512/8767/8767583.png">
+        <ul>
+            <li><a href="./main.html">HOME</a></li>
+            <li><a href="#">Add Numbers</a></li>
+             <li><a href="./ftoc.html">Convert F to C</a></li> 
+             <li><a href="./stopwatch.html">stopWatch</a></li> 
+             <li><a href="./calc.html">calculator</a></li> 
+        </ul>
+    </header>
+    <hr>
+<footer>
+        <h2 i>ADD TWO NUMBERS</h2>
+    <label for="num1">Num1</label>
+    <input type="number" id="num1"><br>
+    <label for="num2">Num2</label>
+    <input type="number" id="num2"><br>
+    <p></p>
+    <button onclick="addFn()">ADD</button>
+    <h2>your sum is: <span id="total"></span></h2>
+
+    <script>
+        function addFn() {
+            var n = document.getElementById("num1").value;
+            var m = document.getElementById("num2").value;
+            var tot = document.getElementById("total");
+            var sum = parseInt(n) + parseInt(m);
+            tot.innerText = sum;
+        }
+    </script>
+</footer>
+</body>
+
+</html>
